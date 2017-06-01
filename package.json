@@ -1,0 +1,35 @@
+{
+  "name": "footures",
+  "version": "0.0.1",
+  "description": "Browser side features flags with a neat UI to help staff-users turn them on. Provides a query API for developers.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc-bundle src/footures.ts dist/footures.js --exportAs footures --allowJs; tsc-bundle src/footures-admin.ts dist/footures-admin.js --exportAs footuresAdmin --allowJs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TypesetIO/footures.git"
+  },
+  "keywords": [
+    "feature-flags",
+    "flags",
+    "user-testing"
+  ],
+  "author": "Dipanjan Mukherjee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TypesetIO/footures/issues"
+  },
+  "homepage": "https://github.com/TypesetIO/footures#readme",
+  "devDependencies": {
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "typescript-bundle": "^0.8.2"
+  }
+}

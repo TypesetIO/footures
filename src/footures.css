@@ -1,0 +1,26 @@
+div.footures-admin {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  font-family: sans-serif;
+}
+
+div.footures-admin span {
+  background-color: #b19cd9;
+
+  display: inline-block;
+  border-radius: 20px;
+  width: 40px; height: 40px;
+
+  line-height: 40px;
+  text-align: center;
+}
+
+div.footures-admin table {
+  display: none;
+}
+
+div.footures-admin:hover table {
+  display: table;
+}
