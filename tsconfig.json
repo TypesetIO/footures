@@ -8,6 +8,7 @@
     "allowJs": true
   },
   "files": [
-    "./src/footures.ts"
+    "./src/footures.ts",
+    "./src/core.ts"
   ]
 }
