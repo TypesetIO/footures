@@ -27,7 +27,7 @@
   "homepage": "https://github.com/TypesetIO/footures#readme",
   "devDependencies": {
     "source-map-loader": "^0.2.1",
-    "typescript": "^2.3.4"
+    "typescript": "^2.3.4",
     "typescript-bundle": "^0.8.2"
   }
 }
