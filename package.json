@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc-bundle src/footures.ts dist/footures.js --exportAs footures --allowJs; tsc-bundle src/footures-admin.ts dist/footures-admin.js --exportAs footuresAdmin --allowJs"
+    "build:browser": "tsc-bundle src/footures.ts dist/footures.bundle.js --exportAs footures --allowJs; tsc-bundle src/footures-admin.ts dist/footures-admin.bundle.js --exportAs footuresAdmin --allowJs",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
