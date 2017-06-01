@@ -1,6 +1,6 @@
 {
   "name": "footures",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Browser side features flags with a neat UI to help staff-users turn them on. Provides a query API for developers.",
   "main": "dist/footures.js",
   "directories": {
