@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:browser": "tsc-bundle src/footures.ts dist/footures.bundle.js --exportAs footures --allowJs; tsc-bundle src/footures-admin.ts dist/footures-admin.bundle.js --exportAs footuresAdmin --allowJs",
-    "build": "tsc"
+    "build": "tsc; npm run build:browser"
   },
   "repository": {
     "type": "git",
