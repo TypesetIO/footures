@@ -28,8 +28,6 @@
   "devDependencies": {
     "source-map-loader": "^0.2.1",
     "typescript": "^2.3.4"
-  },
-  "dependencies": {
     "typescript-bundle": "^0.8.2"
   }
 }
