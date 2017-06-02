@@ -1,16 +1,19 @@
 {
   "name": "footures",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Browser side features flags with a neat UI to help staff-users turn them on. Provides a query API for developers.",
   "main": "dist/footures.js",
   "directories": {
-    "test": "test",
-    "lib": "dist"
+    "test": "test"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:browser": "tsc-bundle src/footures.ts dist/footures.bundle.js --exportAs footures --allowJs; tsc-bundle src/footures-admin.ts dist/footures-admin.bundle.js --exportAs footuresAdmin --allowJs",
-    "build": "tsc; npm run build:browser"
+    "build": "tsc; npm run build:browser",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
