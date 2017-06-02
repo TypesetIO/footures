@@ -33,4 +33,5 @@ function getAllFootures() {
 }
 
 // footures.isEnabled('foo') and footures.register('foo', 'bar');
+export default { register, isEnabled, getAllFootures };
 export { register, isEnabled, getAllFootures };
