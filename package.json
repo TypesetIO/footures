@@ -13,8 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:browser": "tsc-bundle src/footures.ts dist/footures.bundle.js --exportAs footures --allowJs",
     "build:browser-admin": "tsc-bundle src/footures-admin.ts dist/footures-admin.bundle.js --exportAs footuresAdmin --allowJs",
-    "build:styles": "copyfiles src/*.css dist/",
-    "build": "tsc; npm run build:browser; npm run build:browser-admin; npm run build:styles",
+    "build:styles": "copyfiles -f ./src/footures.css ./dist",
+    "build": "npm run clean; tsc; npm run build:browser; npm run build:browser-admin; npm run build:styles",
+    "clean": "rimraf dist/*",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -34,6 +35,7 @@
   "homepage": "https://github.com/TypesetIO/footures#readme",
   "devDependencies": {
     "copyfiles": "^1.2.0",
+    "rimraf": "^2.6.1",
     "source-map-loader": "^0.2.1",
     "typescript": "^2.3.4",
     "typescript-bundle": "^0.8.2"
