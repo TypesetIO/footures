@@ -1,15 +1,31 @@
-import { getFootures } from './core';
+import { getFootures, setFootures } from './core';
 
-const ALL_FEATURES: Array<string> = [];
+class FootureSpecifier {
+  __all: Array<string>
+}
+
+/**
+ * Adds feature to an internal list. Could be used to show UI.
+ * @param feature Mark feature as having been used.
+ */
+function footureUsed(feature: string) {
+  const specifier: FootureSpecifier = getFootures();
+
+  if (!specifier.hasOwnProperty('__all')) {
+    specifier.__all = [];
+  }
+  
+  if (specifier.__all.indexOf(feature) === -1) {
+    specifier.__all.push(feature);
+
+    setFootures(specifier);
+  }
+}
 
 function isEnabled(feature: string) {
-  const specifier: object = getFootures();
+  const specifier: FootureSpecifier = getFootures();
 
-  if (ALL_FEATURES.indexOf(feature) === -1) {
-    // Not registered yet, 
-    ALL_FEATURES.push(feature);
-  }
-
+  footureUsed(feature);
   return !!specifier[feature];
 }
 
@@ -18,18 +34,15 @@ function isEnabled(feature: string) {
  *
  * @param {array} features An array of features spread out like a variadic function.
  */
-function register(...features) {
+function register(...features): void {
   const specifier: object = getFootures();
 
-  features.forEach((feature) => {
-    if (ALL_FEATURES.indexOf(feature) === -1) {
-      ALL_FEATURES.push(feature);
-    }
-  });
+  features.forEach(footureUsed);
 }
 
-function getAllFootures() {
-  return ALL_FEATURES;
+function getAllFootures(): Array<String> {
+  const specifier: FootureSpecifier = getFootures();
+  return specifier.__all;
 }
 
 // footures.isEnabled('foo') and footures.register('foo', 'bar');
