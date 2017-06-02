@@ -60,7 +60,7 @@ function showUI(selector: string) {
   const table = `<table>${rows.join('')}</table>`;
   elem.innerHTML = `<div class="footures-admin">
     ${table}
-    <span>Foo</span>
+    <span>F</span>
   </div>`;
 }
 
