@@ -22,6 +22,19 @@ function footureUsed(feature: string) {
   }
 }
 
+function footureRetired(feature: string) {
+  const specifier: FootureSpecifier = getFootures();
+
+  if (specifier.hasOwnProperty('__all')) {
+    const index : number = specifier.__all.indexOf(feature);
+    if (index !== -1) {
+      specifier.__all.splice(index, 1); // Remove the feature.
+
+      setFootures(specifier);
+    }
+  }
+}
+
 function isEnabled(feature: string) {
   const specifier: FootureSpecifier = getFootures();
 
@@ -40,11 +53,23 @@ function register(...features): void {
   features.forEach(footureUsed);
 }
 
+/**
+ * Deregister features. Allows the admin UI to be cleaned up from time to time
+ * when footures are retired.
+ * 
+ * @param {array} features An array of features spread out for a variadic
+ * function.
+ */
+function retire(...features): void {
+  const specifier: object = getFootures();
+  features.forEach(footureRetired);
+}
+
 function getAllFootures(): Array<String> {
   const specifier: FootureSpecifier = getFootures();
   return specifier.__all;
 }
 
 // footures.isEnabled('foo') and footures.register('foo', 'bar');
-export default { register, isEnabled, getAllFootures };
-export { register, isEnabled, getAllFootures };
+export default { register, retire, isEnabled, getAllFootures };
+export { register, retire, isEnabled, getAllFootures };

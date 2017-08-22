@@ -29,6 +29,18 @@ import footures from 'footures';
 footures.register('feature-1', 'feature-2', 'feature-3');
 ```
 
+## Retiring feature for admin screens
+
+Once you have tested out the features to your heart's content and have made
+changes to your code to make it the default, you will want to remove the footure
+registrations. You can use `footures.retire()` for that.
+
+```javascript
+import footures from 'footures';
+
+footures.retire('old-feature-1');
+```
+
 ## Admin (enable/disable/view)
 
 `footures` are not meant to be visible to users. It is not an AB framework or an incremental availability tool. It is only meant to be used by staff. That means your users shouldn't have access to the admin screens or the ability to enable flags at all.
